@@ -1,0 +1,9 @@
+docker build -t ssh-container-image .
+MSYS2_ARG_CONV_EXCL="*" docker run -d --privileged --name HOST<NODE_1-3> -p 222<2-5>:22 --tmpfs /run --tmpfs /run/lock ssh-container-image
+10.248.52.29
+
+
+UPDATING DOCKERFILE
+    docker compose up -d --build
+OR
+    docker compose up -d

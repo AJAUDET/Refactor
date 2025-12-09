@@ -1,0 +1,10 @@
+pycryptodome
+pwinput
+pytz
+tqdm
+PyYAML
+pathlib
+requests
+pyfiglet
+colorama
+termcolor

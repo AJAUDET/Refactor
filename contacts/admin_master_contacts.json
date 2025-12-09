@@ -1,0 +1,47 @@
+{
+    "HooH:Alice": {
+        "added_by": "HooH",
+        "contact_full_name": "Alice Wonderland",
+        "contact_email": "alice@wonderland.com"
+    },
+    "Alice:HooH": {
+        "added_by": "Alice",
+        "contact_full_name": "HooH Aeon",
+        "contact_email": "HooH@aeons.com"
+    },
+    "michael:bob": {
+        "added_by": "michael",
+        "contact_full_name": "bob white",
+        "contact_email": "bob@test.cs"
+    },
+    "HooH:Mythus": {
+        "added_by": "HooH",
+        "contact_full_name": "Mythus the Enigmata",
+        "contact_email": "enigmata@author.com"
+    },
+    "Mythus:HooH": {
+        "added_by": "Mythus",
+        "contact_full_name": "HooH the Equilibrium",
+        "contact_email": "HooH@aeons.com"
+    },
+    "Nous:Lan": {
+        "added_by": "Nous",
+        "contact_full_name": "Lan The Hunt",
+        "contact_email": "reignbow@arbiter.com"
+    },
+    "Lan:Nous": {
+        "added_by": "Lan",
+        "contact_full_name": "Nous The Erudition",
+        "contact_email": "genius@society.com"
+    },
+    "Nanook:Lan": {
+        "added_by": "Nanook",
+        "contact_full_name": "Lan The Hunt",
+        "contact_email": "reignbow@arbiter.com"
+    },
+    "Lan:Nanook": {
+        "added_by": "Lan",
+        "contact_full_name": "Nanook The Destruction",
+        "contact_email": "ruin@author.com"
+    }
+}

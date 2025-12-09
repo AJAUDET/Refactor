@@ -1,0 +1,98 @@
+version: "3.9"
+
+services:
+  host:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ubuntu-ssh:latest
+    container_name: host
+    privileged: true
+    ports:
+      - "2222:22"   # SSH to host
+    tmpfs:
+      - /run
+      - /run/lock
+    volumes:
+      - host_sshkeys:/etc/ssh           # preserve SSH host keys
+      - host_userdata:/home/user       # preserve user files
+      - host_docker:/var/lib/docker    # Docker data
+    networks:
+      swarmnet:
+        ipv4_address: 10.10.0.10
+    command: ["/start.sh"]
+
+  worker1:
+    image: ubuntu-ssh:latest
+    container_name: worker1
+    privileged: true
+    ports:
+      - "2223:22"
+    tmpfs:
+      - /run
+      - /run/lock
+    volumes:
+      - worker1_sshkeys:/etc/ssh
+      - worker1_userdata:/home/user
+      - worker1_docker:/var/lib/docker
+    networks:
+      swarmnet:
+        ipv4_address: 10.10.0.11
+    command: ["/start.sh"]
+
+  worker2:
+    image: ubuntu-ssh:latest
+    container_name: worker2
+    privileged: true
+    ports:
+      - "2224:22"
+    tmpfs:
+      - /run
+      - /run/lock
+    volumes:
+      - worker2_sshkeys:/etc/ssh
+      - worker2_userdata:/home/user
+      - worker2_docker:/var/lib/docker
+    networks:
+      swarmnet:
+        ipv4_address: 10.10.0.12
+    command: ["/start.sh"]
+
+  worker3:
+    image: ubuntu-ssh:latest
+    container_name: worker3
+    privileged: true
+    ports:
+      - "2225:22"
+    tmpfs:
+      - /run
+      - /run/lock
+    volumes:
+      - worker3_sshkeys:/etc/ssh
+      - worker3_userdata:/home/user
+      - worker3_docker:/var/lib/docker
+    networks:
+      swarmnet:
+        ipv4_address: 10.10.0.13
+    command: ["/start.sh"]
+
+volumes:
+  host_sshkeys:
+  host_userdata:
+  host_docker:
+  worker1_sshkeys:
+  worker1_userdata:
+  worker1_docker:
+  worker2_sshkeys:
+  worker2_userdata:
+  worker2_docker:
+  worker3_sshkeys:
+  worker3_userdata:
+  worker3_docker:
+
+networks:
+  swarmnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.0.0/24

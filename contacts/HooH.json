@@ -1,0 +1,10 @@
+{
+    "Alice": {
+        "full_name": "Alice Wonderland",
+        "email": "alice@wonderland.com"
+    },
+    "Mythus": {
+        "full_name": "Mythus the Enigmata",
+        "email": "enigmata@author.com"
+    }
+}
