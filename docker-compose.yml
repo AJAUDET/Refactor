@@ -15,6 +15,7 @@ services:
       - host_sshkeys:/etc/ssh           # preserve SSH host keys
       - host_userdata:/home/user       # preserve user files
       - host_docker:/var/lib/docker    # Docker data
+      - user_contacts:/home/user/Refactor/contacts # sheared contact files across all containers
     networks:
       swarmnet:
         ipv4_address: 10.10.0.10
@@ -33,6 +34,7 @@ services:
       - worker1_sshkeys:/etc/ssh
       - worker1_userdata:/home/user
       - worker1_docker:/var/lib/docker
+      - user_contacts:/home/user/Refactor/contacts
     networks:
       swarmnet:
         ipv4_address: 10.10.0.11
@@ -51,6 +53,7 @@ services:
       - worker2_sshkeys:/etc/ssh
       - worker2_userdata:/home/user
       - worker2_docker:/var/lib/docker
+      - user_contacts:/home/user/Refactor/contacts
     networks:
       swarmnet:
         ipv4_address: 10.10.0.12
@@ -69,6 +72,7 @@ services:
       - worker3_sshkeys:/etc/ssh
       - worker3_userdata:/home/user
       - worker3_docker:/var/lib/docker
+      - user_contacts:/home/user/Refactor/contacts
     networks:
       swarmnet:
         ipv4_address: 10.10.0.13
@@ -87,6 +91,7 @@ volumes:
   worker3_sshkeys:
   worker3_userdata:
   worker3_docker:
+  user_contacts:
 
 networks:
   swarmnet:
