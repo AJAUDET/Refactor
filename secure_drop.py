@@ -24,11 +24,23 @@ def goodbye_msg(username):
     print("[INFO] Thank you for using SecureDrop!")
     sys.exit(0)
 
+def print_help(username):
+    print("Available commands:")
+    print("  add <username> - Add a contact")
+    print("  list - List all contacts")
+    print("  verify <username> - Verify a contact")
+    if username == "admin":
+        print("  admin_list - List all users (admin only)")
+        print("  admin_clear - Clear all users (admin only)")
+    print("  clear - Clear the terminal")
+    print("  exit - Exit SecureDrop")
+    print("  send <user> <file> - Send a file to a user")
 
 command_map = {
     "add": lambda u, *a: add_contact(u),
     "list": lambda u, *a: list_contacts(u),
     "verify": lambda u, *a: verify_contact(u),
+    "help": lambda u, *a: print_help(u),
     "admin_list": lambda u, *a: admin_list(u),
     "admin_clear": lambda u, *a: admin_clear(u),
     "clear": lambda u, *a: os.system("clear"),
