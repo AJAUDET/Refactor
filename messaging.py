@@ -228,7 +228,7 @@ def _listener_thread(username, port):
 
     sock.bind(("", port))
     sock.listen(5)
-    print(f"[INFO] File transfer listener running on port {port}.")
+    print(f"[INFO] File transfer listener running on port {port}.\n")
 
     while True:
         conn, addr = sock.accept()
