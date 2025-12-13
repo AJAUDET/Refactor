@@ -5,6 +5,7 @@ import os
 import json
 import socket
 import struct
+import time
 from base64 import b64encode, b64decode
 
 from Crypto.Random import get_random_bytes
@@ -25,7 +26,7 @@ SLEEP_INTERVAL = 0.5 # seconds
 def _send_json(sock, obj):
     data = json.dumps(obj).encode()
     header = struct.pack("!I", len(data))
-    os.sleep(SLEEP_INTERVAL) # Quick sleep to avoid TCP packet merging
+    time.sleep(SLEEP_INTERVAL) # Quick sleep to avoid TCP packet merging
     sock.sendall(header + data)
 
 
