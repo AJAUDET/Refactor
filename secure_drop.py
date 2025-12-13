@@ -26,9 +26,9 @@ def goodbye_msg(username):
 
 def print_help(username):
     print("Available commands:")
-    print("  add <username> - Add a contact")
-    print("  list - List all contacts")
-    print("  verify <username> - Verify a contact")
+    print("  add - Add a contact")
+    print("  list - List online contacts")
+    print("  verify - Verify a contact")
     if username == "admin":
         print("  admin_list - List all users (admin only)")
         print("  admin_clear - Clear all users (admin only)")
