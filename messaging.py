@@ -16,6 +16,7 @@ from network import get_online_users, get_user_ip, get_user_port
 # GLOBAL LOCK TO PREVENT CLI FROM STEALING INPUT
 input_lock = threading.Lock()
 
+SLEEP_INTERVAL = 0.5 # seconds
 
 # ----------------------------
 # JSON helpers
@@ -24,6 +25,7 @@ input_lock = threading.Lock()
 def _send_json(sock, obj):
     data = json.dumps(obj).encode()
     header = struct.pack("!I", len(data))
+    os.sleep(SLEEP_INTERVAL) # Quick sleep to avoid TCP packet merging
     sock.sendall(header + data)
 
 
